@@ -1,0 +1,99 @@
+<ion-header translucent="true" >
+  <ion-toolbar color="dark">
+    <ion-title size="large">
+      Welcome
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header no-border >
+    <ion-toolbar>
+      <ion-title size="large">Tamil Nadu Trip
+        <ion-badge [style.--background]="'black'" >New</ion-badge>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>Benifits</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>Free Food will be Provided</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>No Accommodation - Full Travel</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>If you need rest - Our Accommodation Charges will be yours</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>Top 5 Places in each district are listed below </ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>Each District Minimum 15 places will be covered - including your suggestion</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>Be On Time - Respect our Guide </ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>You can Extend your Trip before Departure</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        <ion-label>Surprise GIFT - Based on your Behaviour </ion-label>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item *ngFor = "let x of district">
+    <ion-card>
+      <ion-card-header size="large">
+        <ion-title>
+          {{ x.name }}
+        </ion-title>
+      </ion-card-header>
+      <ion-img [src]="x.image"></ion-img>
+      <ion-card-content>
+        {{ x.detail }}
+        <ion-item>
+          <ion-label>{{ x.x1 }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ x.x2 }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ x.x3 }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ x.x4 }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ x.x5 }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Registration
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<form #customer = "ngForm">
+
+  <ion-content [fullscreen]="true">
+    <ion-item lines="none" size="large">
+      Fill the below details...
+    </ion-item>
+    <ion-card>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-item>
+            <ion-label color="medium">
+              About You
+            </ion-label>
+          </ion-item>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label for="name" color="dark"position ='floating' >
+            Name
+          </ion-label>
+          <ion-input id="name" class="form-control" type="string"
+          required [(ngModel)] = "model.name"
+          name = "name" #name = "ngModel"></ion-input>
+          <div [hidden] = "name.valid || name.pristine">*Required</div>
+        </ion-item>
+        <ion-item>
+          <ion-label for="designation"color="dark"position ='floating'>
+            Designation
+          </ion-label>
+          <ion-input id="designation" class="form-control" type="string"
+          required [(ngModel)] = "model.designation"
+          name = "designation" #designation = "ngModel"></ion-input>
+          <div [hidden] = "designation.valid || designation.pristine">*Required</div>
+        </ion-item>
+        <ion-item>
+          <ion-label for="email"color="dark"position ='floating'>
+            Email
+          </ion-label>
+          <ion-input id="email" class="form-control" type="email"
+          required [(ngModel)] = "model.email"
+          name = "email" #email = "ngModel"></ion-input>
+          <div [hidden] = "email.valid || email.pristine">*Required</div>
+
+        </ion-item>
+      </ion-item-group>
+    </ion-card>
+
+    <ion-card>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-item>
+            <ion-label color="medium">
+              Booking Details
+            </ion-label>
+          </ion-item>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label for="num"color="dark" >
+            No.of Days
+          </ion-label>
+          <ion-input id="num" class="form-control" position ="floating"type="number"required [(ngModel)] = "model.num"
+          name = "num" #num = "ngModel"></ion-input>
+          <div [hidden] = "num.valid || num.pristine">*Required</div>
+
+          <ion-button slot="end" size="small" color="succuess" (click)="onclickof12()">
+            Amount
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label for="btype" color="dark">
+            Type
+          </ion-label>
+          <select id ="btype"slot="end" color="dark" class="form-control" id="btype">
+            <option color="dark"*ngFor ="let x of btype" [value]="x">{{x}}</option>
+          </select>
+
+        </ion-item>
+        <ion-item>
+          <ion-label for="person"color="dark" >
+            No.of Person
+          </ion-label>
+          <ion-input id="person" class="form-control" position ="floating"type="number"required [(ngModel)] = "model.person"
+          name = "person" #person = "ngModel"></ion-input>
+          <div [hidden] = "person.valid || person.pristine">*Required</div>
+        </ion-item>
+
+
+      </ion-item-group>
+    </ion-card>
+
+
+
+
+  </ion-content>
+
+</form>
+
+<ion-footer>
+  <ion-button fill="solid" size="" shape="round"
+   color="danger"  expand="block" type="submit" strong="true" class="e1"
+   (click)="onclickof()" customer.reset>
+    Register
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-button>
+
+</ion-footer>
+
+
+
